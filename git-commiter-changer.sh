@@ -19,7 +19,7 @@ NEW_GIT_NAME=""
 NEW_GIT_EMAIL=""
 
 # 対象ディレクトリの存在チェック
-function check_directory () {
+function check_directory(){
     if [ ! -d "${TARGET_GIT_DIRECTORY}" ]; then
         echo -e "\e[0;31m[ERROR] ${TARGET_GIT_DIRECTORY} is not directory.\e[m"
         return 1
@@ -28,7 +28,7 @@ function check_directory () {
 }
 
 # gitディレクトリであるかを確認
-function check_git_directory () {
+function check_git_directory(){
     local GIT_DIRECTORY="${TARGET_GIT_DIRECTORY%/}/.git"
     if [ ! -e ".git" ]; then
         echo -e "\e[0;31m[ERROR] ${GIT_DIRECTORY} is not git directory.\e[m"
@@ -38,13 +38,13 @@ function check_git_directory () {
 }
 
 # めいん関数
-function main () {
+function main(){
     check_directory || exit 1
     check_git_directory || exit 1
 
     # 引数の指定が無い場合は対話式で入力
     if [ "${OLD_GIT_NAME}" = "" ]; then
-        echo -ne "Please input old git name\t> " 1>&2
+        echo -ne "Please input old git name  > " 1>&2
         read OLD_GIT_NAME
     fi
     # 空文字列はNG
@@ -55,7 +55,7 @@ function main () {
 
     # 引数の指定が無い場合は対話式で入力
     if [ "${OLD_GIT_EMAIL}" = "" ]; then
-        echo -ne "Please input new git email\t> " 1>&2
+        echo -ne "Please input new git email > " 1>&2
         read OLD_GIT_EMAIL
     fi
     # 空文字列はNG
@@ -66,7 +66,7 @@ function main () {
 
     # 引数の指定が無い場合は対話式で入力
     if [ "${NEW_GIT_NAME}" = "" ]; then
-        echo -ne "Please input new git name\t> " 1>&2
+        echo -ne "Please input new git name  > " 1>&2
         read NEW_GIT_NAME
     fi
     # 空文字列はNG
@@ -77,7 +77,7 @@ function main () {
 
     # 引数の指定が無い場合は対話式で入力
     if [ "${NEW_GIT_EMAIL}" = "" ]; then
-        echo -ne "Please input new git email\t> " 1>&2
+        echo -ne "Please input new git email > " 1>&2
         read NEW_GIT_EMAIL
     fi
     # 空文字列はNG
@@ -94,7 +94,7 @@ function main () {
     echo -e "New git name     : ${NEW_GIT_NAME}"
     echo -e "New git email    : ${NEW_GIT_EMAIL}"
     echo -e "-------------------------------------------------------------"
-    echo -ne "Is it ok? [y/n]\t> "
+    echo -ne "Is it ok? [y/n] > "
     local IS_IT_OK=""
     read IS_IT_OK
     if [ "${IS_IT_OK}" != "y" ]; then
@@ -128,7 +128,7 @@ function main () {
     echo "  git push --tags --force"
 }
 
-function usage () {
+function usage(){
     echo -e "-------------------------------------------------------------"
     echo -e "${0#./}"
     echo -e "-------------------------------------------------------------"
