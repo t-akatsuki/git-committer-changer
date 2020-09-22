@@ -12,7 +12,7 @@ set -eu
 CURRENT_DIR="$(pwd)"
 trap "cd ${CURRENT_DIR}" 1 2 3 15
 
-TARGET_GIT_DIRECTORY="./"
+TARGET_GIT_DIRECTORY="$(pwd)"
 OLD_GIT_NAME=""
 OLD_GIT_EMAIL=""
 NEW_GIT_NAME=""
@@ -160,13 +160,7 @@ function usage () {
     echo -e ""
 }
 
-if [ ${#} -le 0 ]; then
-    usage
-    exit 0
-fi
-
-while [ ${#} -ge 1 ];
-do
+while [ ${#} -ge 1 ]; do
     case "${1}" in
         "-h" | "--help" | "--usage" )
             usage
