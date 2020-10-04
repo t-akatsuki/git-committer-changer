@@ -1,8 +1,8 @@
 #!/bin/bash
 #==================================================================================
-# git-commiter-changer.sh
+# git-committer-changer.sh
 #==================================================================================
-# Gitのauthor/commiterを変更するツールです。
+# Gitのauthor/committerを変更するツールです。
 # 既にpushしてしまった歴史を改竄します。
 # 破壊的変更を行う為、利用には注意が必要。
 #==================================================================================
@@ -146,16 +146,16 @@ function usage(){
     echo -e "    Show this usage."
     echo -e ""
     echo -e "  --old-name <old_name>"
-    echo -e "    Specify replace target old author/commiter name."
+    echo -e "    Specify replace target old author/committer name."
     echo -e ""
     echo -e "  --old-email <old_email>"
-    echo -e "    Specify replace target old author/commiter email."
+    echo -e "    Specify replace target old author/committer email."
     echo -e ""
     echo -e "  --name <name>"
-    echo -e "    Specify new author/commiter name."
+    echo -e "    Specify new author/committer name."
     echo -e ""
     echo -e "  --email <email>"
-    echo -e "    Specify new author/commiter email."
+    echo -e "    Specify new author/committer email."
     echo -e "-------------------------------------------------------------"
     echo -e ""
 }

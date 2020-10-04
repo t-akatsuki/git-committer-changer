@@ -1,6 +1,6 @@
-# git-commiter-changer
+# git-committer-changer
 ## Overview
-Gitのauthor/commiterを変更するツールです。  
+Gitのauthor/committerを変更するツールです。  
 既にpushしてしまった歴史を改竄します。  
 破壊的変更を行う為、利用には注意が必要。
 
@@ -9,7 +9,7 @@ git repositoryのお引っ越しや名前/email変更時の補助ツールとし
 ## Usage
 ```shell
 # Usage
-  git-commiter-changer.sh <target_dir> [-h|--help|--usage]
+  git-committer-changer.sh <target_dir> [-h|--help|--usage]
     [--old-name <old_name>] [--old-email <old_email>]
     [--name <name>] [--email <email>]
 
@@ -22,16 +22,16 @@ git repositoryのお引っ越しや名前/email変更時の補助ツールとし
     Show this usage.
 
   --old-name <old_name>
-    Specify replace target old author/commiter name.
+    Specify replace target old author/committer name.
 
   --old-email <old_email>
-    Specify replace target old author/commiter email.
+    Specify replace target old author/committer email.
 
   --name <name>
-    Specify new author/commiter name.
+    Specify new author/committer name.
 
   --email <email>
-    Specify new author/commiter email.
+    Specify new author/committer email.
 ```
 
 - オプションパラメーターを指定しない場合、必要なパラメーターを対話式で入力します。
